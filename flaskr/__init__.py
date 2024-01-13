@@ -3,7 +3,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_wtf import FlaskForm 
 from wtforms import StringField, validators, PasswordField, SubmitField 
 from wtforms.validators import DataRequired, Email 
-import email_validator 
+from flask_bootstrap import Bootstrap
+import email_validator
 
 
 class contactForm(FlaskForm): 
@@ -16,6 +17,7 @@ class contactForm(FlaskForm):
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    Bootstrap(app)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),

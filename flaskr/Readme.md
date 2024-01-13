@@ -5,4 +5,5 @@ Depndencies:
 pip install flask
 pip install Flask-WTF
 pip install email_validator
+pip install Flask-Bootstrap
 
